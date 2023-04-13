@@ -1,18 +1,18 @@
 {
   "name": "cloud189",
   "version": "0.0.1",
-  "description": "",
+  "description": "天翼云盘",
   "main": "dist/cjs/index.js",
   "types": "dist/cjs/index.d.ts",
   "scripts": {
-    "dev": "father build && node --inspect -r dotenv/config dist/cjs/index.js",
+    "dev": "father build && node -r dotenv/config dist/cjs/index.js",
     "test": "npm run build && node -r dotenv/config ncc/index.js",
     "build": "father build && ncc build dist/cjs/index.js -m -o ncc",
     "build:deps": "father prebundle",
     "prepublishOnly": "father doctor && npm run build"
   },
-  "keywords": [],
-  "authors": [],
+  "keywords": ["天翼云盘"],
+  "authors": ["zhengtan2003"],
   "license": "MIT",
   "files": [
     "dist",
