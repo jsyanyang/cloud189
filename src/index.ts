@@ -6,7 +6,7 @@ import {spaceDraw} from "./space-draw"
 import {toBytesUnit} from "@hudiemon/utils"
 import {getUserInfoForPortal} from "./services";
 
-export const main = async () => {
+(async () => {
     if (!process.env.COOKIE) {
         message.error('【secrets.COOKIE】未设置')
         return
@@ -21,5 +21,4 @@ export const main = async () => {
     message.info(`📈【容量提升】${toBytesUnit(new BigNumber(lastUserinfo.capacity).minus(userinfo.capacity).toNumber())}M`);
     message.info(`🔋【网盘容量】${toBytesUnit(new BigNumber(lastUserinfo.capacity).minus(lastUserinfo.available).toNumber())} / ${toBytesUnit(lastUserinfo.capacity)}`);
 
-}
-main().finally(message.finally)
+})().finally(message.finally)
