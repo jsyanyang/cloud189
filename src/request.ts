@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {message} from "./message";
+import {webhook} from "./webhook";
 import {errorText} from './error-text';
 
 export const request = axios.create({
@@ -14,6 +14,6 @@ request.interceptors.response.use(
     },
     (error) => {
         const {errorCode} = error.response.data;
-        message.error(errorText[errorCode])
+        webhook.error(errorText[errorCode])
         return Promise.reject(errorText[errorCode]);
     });
