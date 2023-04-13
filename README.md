@@ -4,7 +4,7 @@
 # ![logo](assets/logo.png)
 ## 如何获取cookie
 第一步：打开 https://cloud.189.cn/ 登录。   
-第二步：打开开发者工具，找到**Cookie**中的**COOKIE_LOGIN_USER**。 
+第二步：打开开发者工具，找到**Cookie**。 
 
 **Cookie**的一般格式为**COOKIE_LOGIN_USER=B7BC623BACE7B3389FFF4E270**。（长短不定）
 ## 教程
