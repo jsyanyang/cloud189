@@ -45,7 +45,16 @@ export const userSign = (): Promise<any> => request.get("http://api.cloud.189.cn
         Cookie: process.env.COOKIE
     }
 })
+const juejinHeaders = {
+        Referer: "https://juejin.cn/",
+        Host: "m.cloud.189.cn",
+        Cookie: process.env.JUEJIN_COOKIE
+}
 //掘金签到
-export const juejinSign = (): Promise<any> => request.post("https://api.juejin.cn/growth_api/v1/check_in?aid=2608&uuid=7137179652339336745&spider=0")
+export const juejinSign = (): Promise<any> => request.post("https://api.juejin.cn/growth_api/v1/check_in?aid=2608&uuid=7137179652339336745&spider=0", {
+    headers: juejinHeaders
+})
 //掘金抽奖
-export const juejinDraw = (): Promise<any> => request.post("https://api.juejin.cn/growth_api/v1/lottery/draw?aid=2608&uuid=7137179652339336745&spider=0&msToken=Qtkjf8n-oXCYfjQ2aypxgf_TWZ79VK_BsPcjYDW-MZtcQvEOh4cs2XQRn4hsY5Ay5LMjcAZLurPtcs5xneBZsiaFqfaCU0dbpW5IkeQxG11YkRhCdasu-UiD1xMa9Bk%3D&a_bogus=DJ4DfOgQMsm1FhVm6hDz9HDEPIy0YW4igZENI2wbdtLQ")
+export const juejinDraw = (): Promise<any> => request.post("https://api.juejin.cn/growth_api/v1/lottery/draw?aid=2608&uuid=7137179652339336745&spider=0&msToken=Qtkjf8n-oXCYfjQ2aypxgf_TWZ79VK_BsPcjYDW-MZtcQvEOh4cs2XQRn4hsY5Ay5LMjcAZLurPtcs5xneBZsiaFqfaCU0dbpW5IkeQxG11YkRhCdasu-UiD1xMa9Bk%3D&a_bogus=DJ4DfOgQMsm1FhVm6hDz9HDEPIy0YW4igZENI2wbdtLQ", {
+    headers: juejinHeaders
+})

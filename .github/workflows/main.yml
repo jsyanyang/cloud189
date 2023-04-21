@@ -8,6 +8,7 @@ on:
 env:
   COOKIE: ${{ secrets.COOKIE }}
   WEBHOOK_WEIXIN: ${{ secrets.WEBHOOK_WEIXIN }}
+  JUEJIN_COOKIE: ${{ secrets.JUEJIN_COOKIE }}
 jobs:
   main:
     runs-on: ubuntu-latest
