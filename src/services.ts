@@ -1,5 +1,5 @@
-import {request} from './request'
-import {AxiosRequestConfig} from 'axios'
+import { request } from './request'
+import { AxiosRequestConfig } from 'axios'
 
 // 获取用户基础信息
 export const getUserInfoForPortal = (): Promise<{ loginName: string, available: number, capacity: number }> => request.get('http://cloud.189.cn/api/open/user/getUserInfoForPortal.action', {
@@ -45,10 +45,25 @@ export const userSign = (): Promise<any> => request.get("http://api.cloud.189.cn
         Cookie: process.env.COOKIE
     }
 })
+console.log("🚀 ~ file: services.ts:53 ~ juejinHeaders.process.env.JUEJIN_COOKIE:", juejinHeaders.process.env.JUEJIN_COOKIE)
 const juejinHeaders = {
-        Referer: "https://juejin.cn/",
-        Host: "m.cloud.189.cn",
-        Cookie: process.env.JUEJIN_COOKIE
+    Referer: "https://juejin.cn/",
+    Host: "m.cloud.189.cn",
+    Cookie: process.env.JUEJIN_COOKIE,
+    authority: `api.juejin.cn`,
+    accept: "*/*",
+    'accept-language': "zh-CN,zh;q=0.9,en;q=0.8",
+    'content-type': "application/json",
+    'origin': "https://juejin.cn",
+    'referer': "https://juejin.cn/",
+    'sec-ch-ua': `"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"`,
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': `"Windows"`,
+    'sec-fetch-dest': `empty`,
+    'sec-fetch-mode': `cors`,
+    'sec-fetch-site': `same-site`,
+    'user-agent': `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36`,
+    'x-secsdk-csrf-token': `000100000001b290c4fb14b554775f740159f6976997037b9a18613a04cc23e5c851323daef41756e540c3484513`,
 }
 //掘金签到
 export const juejinSign = (): Promise<any> => request.post("https://api.juejin.cn/growth_api/v1/check_in?aid=2608&uuid=7137179652339336745&spider=0", {
