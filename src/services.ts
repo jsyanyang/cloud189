@@ -45,10 +45,8 @@ export const userSign = (): Promise<any> => request.get("http://api.cloud.189.cn
         Cookie: process.env.COOKIE
     }
 })
-console.log("🚀 ~ file: services.ts:47 ~ userSign ~ Cookie: process.env.COOKIE:", process.env.COOKIE)
+console.log("🚀 ~ file: services.ts:47 ~ userSign ~ Cookie: process.env.JUEJIN_COOKIE:", process.env.JUEJIN_COOKIE)
 const juejinHeaders = {
-    Referer: "https://juejin.cn/",
-    Host: "m.cloud.189.cn",
     Cookie: process.env.JUEJIN_COOKIE,
     authority: `api.juejin.cn`,
     accept: "*/*",
